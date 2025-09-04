@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SkillGap AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <a href="index.html" class="logo">SkillGap AI</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="upload.html">Upload Resume</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="login.html" class="btn btn-secondary">Login</a></li>
+                <li><a href="signup.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>Get in Touch</h1>
+                <p>Have questions about SkillGap AI? We're here to help you unlock your professional potential.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content Section -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="form-header">
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    </div>
+
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="sales">Sales & Pricing</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="press">Press & Media</option>
+                                <option value="careers">Career Opportunities</option>
+                                <option value="feedback">Product Feedback</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                            <div class="character-count">
+                                <span id="charCount">0</span>/500 characters
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for updates and career tips
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" style="display: none;">Sending...</span>
+                        </button>
+
+                        <div class="form-success" id="formSuccess" style="display: none;">
+                            <div class="success-icon">✓</div>
+                            <h3>Message Sent Successfully!</h3>
+                            <p>Thank you for contacting us. We'll respond within 24 hours.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Email Us</h4>
+                                <p>hello@skillgapai.com</p>
+                                <small>We respond within 24 hours</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h4>Call Us</h4>
+                                <p>+1 (555) 123-4567</p>
+                                <small>Mon-Fri, 9AM-6PM PST</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🏢</div>
+                            <div class="contact-details">
+                                <h4>Visit Us</h4>
+                                <p>123 Innovation Drive<br>Tech Valley, CA 94025</p>
+                                <small>By appointment only</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <h4>Live Chat</h4>
+                                <p>Available on our website</p>
+                                <small>Mon-Fri, 8AM-8PM PST</small>
+                                <button class="chat-btn" onclick="openLiveChat()">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Quick Links -->
+                    <div class="faq-links">
+                        <h4>Quick Answers</h4>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                How accurate is the skill analysis?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                Our AI-powered analysis has a 98% accuracy rate, validated through extensive testing and user feedback.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                Is my data secure and private?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                Yes, we use enterprise-grade encryption and never share your personal data with third parties.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                What file formats do you support?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                We support PDF, DOC, DOCX, and TXT files up to 10MB in size.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                Do you offer enterprise solutions?
+                                <span class="faq-toggle">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                Yes, we provide custom enterprise solutions for organizations. Contact our sales team for more information.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section class="office-locations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Global Presence</h2>
+                <p>Find us around the world</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card fade-in">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop&auto=format" alt="San Francisco Office">
+                    </div>
+                    <div class="location-info">
+                        <h4>San Francisco (HQ)</h4>
+                        <p>123 Innovation Drive<br>Tech Valley, CA 94025</p>
+                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=250&fit=crop&auto=format" alt="London Office">
+                    </div>
+                    <div class="location-info">
+                        <h4>London</h4>
+                        <p>45 Finsbury Square<br>London EC2A 1PX, UK</p>
+                        <p><strong>Phone:</strong> +44 20 7123 4567</p>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&h=250&fit=crop&auto=format" alt="Singapore Office">
+                    </div>
+                    <div class="location-info">
+                        <h4>Singapore</h4>
+                        <p>1 Marina Boulevard<br>Singapore 018989</p>
+                        <p><strong>Phone:</strong> +65 6123 4567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Resources -->
+    <section class="support-resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>Additional Resources</h2>
+                <p>Find answers and get help</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h4>Documentation</h4>
+                    <p>Comprehensive guides and API documentation</p>
+                    <a href="#" class="resource-link">View Docs</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎥</div>
+                    <h4>Video Tutorials</h4>
+                    <p>Step-by-step video guides and webinars</p>
+                    <a href="#" class="resource-link">Watch Now</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">💡</div>
+                    <h4>Help Center</h4>
+                    <p>Frequently asked questions and troubleshooting</p>
+                    <a href="#" class="resource-link">Get Help</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">👥</div>
+                    <h4>Community Forum</h4>
+                    <p>Connect with other users and share experiences</p>
+                    <a href="#" class="resource-link">Join Community</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SkillGap AI</h3>
+                    <p>Empowering professionals worldwide with AI-driven skill gap analysis and personalized career development insights.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="about.html">Features</a></li>
+                        <li><a href="upload.html">Upload Resume</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkillGap AI. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const btn = this.querySelector('button[type="submit"]');
+            const btnText = btn.querySelector('.btn-text');
+            const btnLoading = btn.querySelector('.btn-loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            btn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                document.getElementById('formSuccess').style.display = 'block';
+                this.style.display = 'none';
+                
+                // Scroll to success message
+                document.getElementById('formSuccess').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }, 2000);
+        });
+
+        // Character counter for message textarea
+        document.getElementById('message').addEventListener('input', function() {
+            const charCount = document.getElementById('charCount');
+            const currentLength = this.value.length;
+            charCount.textContent = currentLength;
+            
+            if (currentLength > 450) {
+                charCount.style.color = '#ef4444';
+            } else {
+                charCount.style.color = '';
+            }
+        });
+
+        // FAQ toggle functionality
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = button.querySelector('.faq-toggle');
+            
+            const isOpen = faqItem.classList.contains('open');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('open');
+                item.querySelector('.faq-answer').style.maxHeight = '0';
+                item.querySelector('.faq-toggle').textContent = '+';
+            });
+            
+            // Toggle current FAQ
+            if (!isOpen) {
+                faqItem.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                toggle.textContent = '−';
+            }
+        }
+
+        // Live chat function
+        function openLiveChat() {
+            alert('Live chat would be implemented here with a service like Intercom, Zendesk Chat, or similar.');
+        }
+
+        // Form validation enhancements
+        const requiredFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+        
+        requiredFields.forEach(field => {
+            field.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = '';
+                }
+            });
+            
+            field.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#22c55e';
+                }
+            });
+        });
+
+        // Email validation
+        document.getElementById('email').addEventListener('blur', function() {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (this.value && !emailPattern.test(this.value)) {
+                this.style.borderColor = '#ef4444';
+            }
+        });
+
+        // Auto-resize textarea
+        document.getElementById('message').addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 200) + 'px';
+        });
+    </script>
+</body>
+</html>
